@@ -1,7 +1,8 @@
-# cafsim — Daeshin cafeteria crowd simulator
+# Cafeteria Simulator
 
+## Daeshin cafeteria crowd simulator
+*"군중 유체 관점에서 분석한 학교 급식실 병목부 전방 장애물의 흐름 안정화 효과 분석"*.  
 (Supplement to the Samsung HumanTech paper)  
-*"군중 유체 관점에서 분석한 학교 급식실 병목부 전방 장애물의 흐름 안정화 효과 분석"*.
 
     node experiments/replicate.js     # M2 gate: reproduce the paper's Table 1 baseline
     node experiments/calibrate.js     # scan the force constants the paper does not state
