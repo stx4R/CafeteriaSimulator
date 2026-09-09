@@ -1,0 +1,11 @@
+{
+  "name": "cafsim",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "Crowd-dynamics simulator for the Daejeon Daeshin High cafeteria approach (Samsung HumanTech physics paper supplement)",
+  "dependencies": {
+    "playwright": "^1.49.1",
+    "three": "^0.160.1"
+  }
+}

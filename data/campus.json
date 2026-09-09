@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "site": "Daejeon Daeshin High School",
+    "frame": "metres; x east-ish, y south-ish; world = satellite pixel * 0.161290",
+    "scale_m_per_px": 0.16129,
+    "scale_source": "Google Earth 60 m bar = 372 px; cross-checked against 2.3 m parking-stall pitch (14.46 px)",
+    "confirmed": ["exits", "routeA", "routeB", "door", "treeIslands"],
+    "estimated": ["buildings", "fieldEdge", "msEdge", "parking", "corridorWidths", "doorWidth"],
+    "note": "Everything in `estimated` was traced from a low-resolution satellite image and should be corrected in tools/geom-editor.html before quantitative runs are published."
+  },
+
+  "domain": { "x0": 108, "y0": 52, "x1": 300, "y1": 208 },
+
+  "exits": [
+    { "id": "E1", "x": 238.8, "y": 77.8,  "w": 6.0, "h": 6.0, "side": "NW", "note": "north wing, sports-field side" },
+    { "id": "E2", "x": 225.2, "y": 105.0, "w": 5.0, "h": 5.0, "side": "SE", "note": "main entrance porch" },
+    { "id": "E3", "x": 192.7, "y": 107.9, "w": 5.5, "h": 5.5, "side": "NW", "note": "SW door, field side" },
+    { "id": "E4", "x": 199.6, "y": 122.9, "w": 5.0, "h": 5.0, "side": "SE", "note": "SW end, plaza side" }
+  ],
+
+  "routes": {
+    "A": {
+      "polyline": [[161.0,123.4],[133.4,138.7],[122.7,148.1],[117.9,150.3],[129.8,172.6]],
+      "width": 4.0,
+      "length_m": 81.4
+    },
+    "B": {
+      "polyline": [[173.9,149.2],[156.1,161.8],[134.0,172.9]],
+      "width": 5.0,
+      "length_m": 49.7
+    }
+  },
+
+  "door": { "x": 130.6, "y": 175.9, "width": 1.2, "normal": [0, 1],
+            "note": "width defaults to the paper's W = 1.2 m; measure the real door and correct" },
+
+  "buildings": [
+    { "id": "school_main", "kind": "bar", "start": [190, 112], "angle_deg": -22.7,
+      "length": 90, "halfWidth": 7.5, "height": 16,
+      "note": "long teaching wing; SE face borders the plaza" },
+    { "id": "school_north", "kind": "bar", "start": [233, 83], "angle_deg": -22.7,
+      "length": 55, "halfWidth": 6.5, "height": 16,
+      "note": "north wing that E1 sits on; forms the courtyard" },
+    { "id": "cafeteria", "kind": "poly", "height": 9,
+      "poly": [[124.8,177.3],[171.5,166.5],[178.3,195.7],[131.6,206.5]],
+      "note": "NE face anchored on the door and parallel to the traced roof edge (-13 deg), so both corridors stay outside it" },
+    { "id": "middle_school", "kind": "bar", "start": [196, 175], "angle_deg": -26.6,
+      "length": 95, "halfWidth": 9.0, "height": 16 }
+  ],
+
+  "blockers": [
+    { "id": "sports_field", "poly": [[108,124.6],[300,44.2],[300,20],[108,20]],
+      "note": "field + tree line NW of the school; leaves the NW service path open" },
+    { "id": "west_parking", "poly": [[108,100],[138,114],[124,146],[108,136]],
+      "note": "car park west of route A" }
+  ],
+
+  "treeIslands": [
+    { "x": 158.7, "y": 136.4, "r": 6.7 },
+    { "x": 155.8, "y": 118.2, "r": 6.6 },
+    { "x": 155.1, "y": 153.6, "r": 5.4 },
+    { "x": 215.2, "y": 174.1, "r": 4.4 },
+    { "x": 187.6, "y": 119.6, "r": 3.9 },
+    { "x": 210.0, "y": 128.3, "r": 2.7 },
+    { "x": 210.3, "y": 138.9, "r": 2.4 },
+    { "x": 218.2, "y": 124.9, "r": 1.8 }
+  ],
+
+  "population": {
+    "grades": 3,
+    "classesPerGrade": 10,
+    "studentsPerClass": 34,
+    "teachers": 100,
+    "note": "3 x 10 x 34 = 1020 students + 100 teachers = 1120 people"
+  },
+
+  "cafeteria": {
+    "hall": { "w": 34, "h": 22 },
+    "servingLines": 4,
+    "serviceTime_s": 3.5,
+    "seats": 420,
+    "mealTime_s": 780,
+    "trayReturns": 2,
+    "note": "literature defaults, all exposed as sliders; replace with measured values"
+  }
+}
